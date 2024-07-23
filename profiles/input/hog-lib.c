@@ -1342,7 +1342,6 @@ static void hog_free(void *data)
 	struct bt_hog *hog = data;
 
 	bt_hog_detach(hog, true);
-	uhid_destroy(hog, true);
 
 	queue_destroy(hog->input, free);
 	queue_destroy(hog->bas, (void *) bt_bas_unref);
